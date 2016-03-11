@@ -78,5 +78,8 @@ prices.select do |price|
   price < 50
 end
 
+prices.select(&:even?)
+# is the same as
+prices.select { |price| :even?.to_proc.call(price)}
 
-
+prices.map(&:to_f)
